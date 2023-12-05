@@ -1,45 +1,22 @@
-# nodejs-login-api
-A Node.js API for user registration, login, and authentication using email and phone, with password recovery and user management features.
+# This repository contains a Node.js application with CRUD functionality for user posts, including authentication using Passport JWT tokens. It also provides an API to retrieve posts based on geolocation coordinates. The dashboard displays the count of active and inactive posts.
 
 
 # Node.js Login API System
+To access protected endpoints, you need to include a valid JWT token in the request headers. You can obtain a token through the login endpoint.
 
-This is a Node.js API system that provides user registration, login, and authentication functionality. It supports both email and phone number-based registration and login. Additionally, it includes features such as password recovery, user profile management, and more.
-
-## Routes
-
-- **POST /register**: Register a new user.
-- **POST /login**: Login with email and password.
-- **POST /loginphone**: Login with phone and password.
-- **POST /verifyotp**: Verify OTP for phone-based login.
-- **GET /logout**: Logout the user.
-- **GET /me**: Get user profile (protected route).
-- **PUT /updatedetails**: Update user profile (protected route).
-- **PUT /updatepassword**: Update user password (protected route).
-- **POST /forgotpassword**: Initiate the password reset process.
-- **PUT /resetpassword/:resetToken**: Reset the user's password using a reset token.
-- **GET /**: Get a list of users (supports pagination, filtering, and sorting).
-- **GET /:id**: Get a single user by ID.
-- **PUT /:id**: Update a user by ID.
-- **DELETE /:id**: Delete a user by ID.
-- **POST /**: Create a new user (admin route).
-
-## Usage
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/nodejs-login-api.git
-1) Install Dependencies
-cd nodejs-login-api
-npm install
-2) Run the Application
-npm start
-3) Access the API at http://localhost:3000.
-
-Contributing
-Feel free to contribute to this project by submitting issues, feature requests, or pull requests.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Endpoints
+POST /api/user/register: Register a new user.
+POST /api/user/login: Log in and receive a JWT token.
+GET /api/post: Get all posts for the authenticated user.
+GET /api/post/:id: Get a specific post by ID.
+POST /api/post: Create a new post.
+PUT /api/post/:id: Update an existing post.
+DELETE /api/post/:id: Delete a post.
+GET /api/post/location?latitude={latitude}&longitude={longitude}: Get posts based on geolocation.
+GET /api/dashboard: Get counts of active and inactive posts.
+Features
+User registration and authentication using JWT tokens.
+CRUD operations for user posts.
+Geolocation-based post retrieval.
+Dashboard displaying counts of active and inactive posts.
 
